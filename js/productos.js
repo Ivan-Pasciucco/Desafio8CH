@@ -10,9 +10,9 @@ class Productos{
     newTable(){
         this.knex.schema.createTable(this.table,(table) => {
             table.increments('id');
-            table.string('title',200);
-            table.string('price',100);
-            table.string('thumbnail',250);
+            table.string('title',50);
+            table.string('price',20);
+            table.string('thumbnail',300);
         })
         .then(() => {
             console.log('tabla creada');
@@ -25,7 +25,7 @@ class Productos{
     addProduct(product){
         this.knex(this.table).insert(product)
         .then(() => {
-            console.log('Producto guardado');
+            console.log('Producto guardado con exito');
         })
         .catch((error) => {
             console.log(error);

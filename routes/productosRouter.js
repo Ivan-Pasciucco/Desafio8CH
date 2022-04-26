@@ -2,9 +2,9 @@ const express = require('express');
 const router = express.Router();
 
 //productos
-const optProd = require('../options/mariaDB');
+const optProductos = require('../options/mariaDB');
 const Productos = require('../js/productos');
-const producto = new Productos('productos',optProd);
+const producto = new Productos('productos',optProductos);
 
 router.post('/', ( req , res ) => {
     producto.newTable();

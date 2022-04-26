@@ -8,12 +8,12 @@ class Chat{
 
   newTable(){
       this.knex.schema.createTable(this.table,(table) => {
-          table.string('email',200);
-          table.string('texto',250);
-          table.string('fyh',100);
+          table.string('email',100);
+          table.string('texto',400);
+          table.string('fyh',50);
       })
       .then(() => {
-          console.log('tabla creada');
+          console.log('Tabla creada con exito');
       })
       .catch((error) => {
           console.log('La tabla ya existe');

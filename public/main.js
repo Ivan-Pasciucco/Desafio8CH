@@ -1,8 +1,6 @@
 const socket = io.connect()
-
 // tabla productos
 // ---------------------------------------------------------------------------------------------------------------------------------------
-
 const formProductos = document.getElementById('formulario')
 formProductos.addEventListener('submit',(e) => {
     e.preventDefault()
@@ -36,9 +34,7 @@ formProductos.addEventListener('submit',(e) => {
      })
 
     formProductos.reset()
-
 })
-
 function render(data) {
     if(data.length !== 0){
         const table = `<tr><th><h5>Nombre</h5></th><th><h5>Precio</h5></th><th><h5>Foto</h5></th></tr>`
@@ -62,9 +58,7 @@ socket.on('historialProductos', data => {
     render(data)
 })
 
-// chat
-// -----------------------------------------------------------------------------------------------------------------------------------------
-
+//chat
 const formChat = document.getElementById('formChat')
 formChat.addEventListener('submit',(e) => {
     e.preventDefault()
